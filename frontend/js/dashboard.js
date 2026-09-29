@@ -43,9 +43,9 @@ function renderCharts(insights) {
                 datasets: [{
                     data: catData.data,
                     backgroundColor: [
-                        "#059669", "#0f766e", "#3b82f6", "#10b981", "#8b5cf6", "#f59e0b"
+                        "#059669", "#0d9488", "#3b82f6", "#10b981", "#6366f1", "#f59e0b"
                     ],
-                    borderWidth: 2,
+                    borderWidth: 3,
                     borderColor: "#ffffff"
                 }]
             },
@@ -53,9 +53,9 @@ function renderCharts(insights) {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { position: "right", labels: { boxWidth: 12, font: { size: 11, family: "Inter" } } }
+                    legend: { position: "right", labels: { boxWidth: 10, padding: 12, font: { size: 11, family: "Inter" } } }
                 },
-                cutout: "68%"
+                cutout: "72%"
             }
         });
     }

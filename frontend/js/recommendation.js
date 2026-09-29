@@ -15,20 +15,30 @@ export function displayRecommendationResults(data) {
     const mat = rec.material || {};
 
     // 1. Title & Header
-    document.getElementById("rec-commodity-name").textContent = data.commodity_name || "Food Commodity";
-    document.getElementById("rec-material-name").textContent = mat.name || "Recommended Material";
-    document.getElementById("rec-material-cat").textContent = `${mat.category || "Polymer"} | Thickness: ${mat.thickness || 40} μm`;
+    const commEl = document.getElementById("rec-commodity-name");
+    if (commEl) commEl.textContent = data.commodity_name || "Food Commodity";
+    const matNameEl = document.getElementById("rec-material-name");
+    if (matNameEl) matNameEl.textContent = mat.name || "Recommended Material";
+    const matCatEl = document.getElementById("rec-material-cat");
+    if (matCatEl) matCatEl.textContent = `${mat.category || "Polymer"} | Thickness: ${mat.thickness || 40} μm`;
 
     // 2. Score Badges
-    document.getElementById("rec-compat-score").textContent = data.compatibility_score || rec.compatibility_score || 90;
-    document.getElementById("rec-perf-score").textContent = `${data.performance_score || rec.performance_score || 85}/100`;
-    document.getElementById("rec-cost-score").textContent = `${data.cost_score || rec.cost_score || 75}/100`;
-    document.getElementById("rec-sust-score").textContent = `${data.sustainability_score || rec.sustainability_score || 80}/100`;
+    const compatEl = document.getElementById("rec-compat-score");
+    if (compatEl) compatEl.textContent = data.compatibility_score || rec.compatibility_score || 90;
+    const perfEl = document.getElementById("rec-perf-score");
+    if (perfEl) perfEl.textContent = `${data.performance_score || rec.performance_score || 85}/100`;
+    const costEl = document.getElementById("rec-cost-score");
+    if (costEl) costEl.textContent = `${data.cost_score || rec.cost_score || 75}/100`;
+    const sustEl = document.getElementById("rec-sust-score");
+    if (sustEl) sustEl.textContent = `${data.sustainability_score || rec.sustainability_score || 80}/100`;
 
     // 3. Operational Indicators
-    document.getElementById("rec-shelf-life-range").textContent = data.shelf_life_range || rec.shelf_life_range || "N/A";
-    document.getElementById("rec-map-status").textContent = rec.map_suitability || "MAP Compatible";
-    document.getElementById("rec-unit-cost").textContent = `$${(mat.estimated_cost || 0.05).toFixed(3)} USD`;
+    const slEl = document.getElementById("rec-shelf-life-range");
+    if (slEl) slEl.textContent = data.shelf_life_range || rec.shelf_life_range || "N/A";
+    const mapEl = document.getElementById("rec-map-status");
+    if (mapEl) mapEl.textContent = rec.map_suitability || "MAP Compatible";
+    const unitCostEl = document.getElementById("rec-unit-cost");
+    if (unitCostEl) unitCostEl.textContent = `$${(mat.estimated_cost || 0.05).toFixed(3)} USD`;
 
     // 4. Render Radar Chart
     renderRadarChart(rec.radar_metrics || {

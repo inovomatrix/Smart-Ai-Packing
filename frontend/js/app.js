@@ -16,6 +16,59 @@ import { initShelfLifeEstimator } from "./shelf_life.js";
 import { initHistory, loadHistoryTable } from "./history.js";
 import { initDemoScenarios } from "./demo.js";
 
+// Modern Toast Notification Utility
+export function showToast(message, type = "info", duration = 3800) {
+    const container = document.getElementById("toast-container");
+    if (!container) return;
+
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+
+    const iconMap = {
+        success: "✓",
+        error: "✕",
+        warning: "⚠",
+        info: "ℹ"
+    };
+
+    toast.innerHTML = `
+        <span class="toast-icon">${iconMap[type] || "ℹ"}</span>
+        <span class="toast-msg">${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add("toast-hide");
+        setTimeout(() => toast.remove(), 250);
+    }, duration);
+}
+window.showToast = showToast;
+
+// Forward native window.alert to sleek modern toast
+window.alert = function(msg) {
+    const isErr = msg.toLowerCase().includes("error") || msg.toLowerCase().includes("failed");
+    const isWarn = msg.toLowerCase().includes("please") || msg.toLowerCase().includes("maximum");
+    const isSucc = msg.toLowerCase().includes("successfully") || msg.toLowerCase().includes("passed");
+    const type = isErr ? "error" : (isWarn ? "warning" : (isSucc ? "success" : "info"));
+    showToast(msg, type);
+};
+
+// Global modern styling for Chart.js
+if (typeof Chart !== "undefined") {
+    Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = "#64748b";
+    Chart.defaults.plugins.tooltip.backgroundColor = "#090d16";
+    Chart.defaults.plugins.tooltip.titleColor = "#ffffff";
+    Chart.defaults.plugins.tooltip.bodyColor = "#cbd5e1";
+    Chart.defaults.plugins.tooltip.borderColor = "rgba(255, 255, 255, 0.1)";
+    Chart.defaults.plugins.tooltip.borderWidth = 1;
+    Chart.defaults.plugins.tooltip.padding = 10;
+    Chart.defaults.plugins.tooltip.cornerRadius = 8;
+    Chart.defaults.plugins.tooltip.boxPadding = 4;
+}
+
 // Make global helpers accessible to inline calls
 window.displayRecommendationResults = displayRecommendationResults;
 window.loadWhatIfFromAnalysis = loadWhatIfFromAnalysis;

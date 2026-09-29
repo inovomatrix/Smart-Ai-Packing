@@ -26,90 +26,83 @@
         <aside id="app-sidebar" class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <!-- High-Tech Food & Packaging AI SVG Logo -->
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="36" height="36" rx="8" fill="url(#logo-grad)"/>
-                        <path d="M10 13L18 8L26 13V23L18 28L10 23V13Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M18 8V28" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="2 2"/>
-                        <circle cx="18" cy="18" r="4" fill="#34d399"/>
-                        <path d="M14 20L18 18L22 20" stroke="#064e3b" stroke-width="1.5" stroke-linecap="round"/>
-                        <defs>
-                            <linearGradient id="logo-grad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#059669"/>
-                                <stop offset="1" stop-color="#0f766e"/>
-                            </linearGradient>
-                        </defs>
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="34" height="34" rx="8" fill="#047857"/>
+                        <path d="M10 12L17 7.5L24 12V22L17 26.5L10 22V12Z" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 7.5V26.5" stroke="#a7f3d0" stroke-width="1.2" stroke-dasharray="2 2"/>
+                        <circle cx="17" cy="17" r="3.5" fill="#34d399"/>
                     </svg>
                     <div class="sidebar-logo-text">
-                        <h1>PackSmart AI</h1>
-                        <p>SIH 2026 • PS ID: 26236</p>
+                        <h1>PackSmart <span class="ai-tag">AI</span></h1>
+                        <p>Decision Intelligence</p>
                     </div>
                 </div>
             </div>
 
             <nav class="sidebar-nav">
-                <div class="nav-section-label">Core Decision System</div>
+                <div class="nav-section-label">Core System</div>
                 <a href="#dashboard" class="nav-item active" data-view="dashboard">
-                    <span class="nav-icon">📊</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                     <span>Dashboard</span>
                 </a>
                 <a href="#analysis" class="nav-item" data-view="analysis">
-                    <span class="nav-icon">🔬</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                     <span>New Analysis</span>
                 </a>
                 <a href="#recommendations" class="nav-item" data-view="recommendations">
-                    <span class="nav-icon">🎯</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                     <span>Recommendations</span>
                 </a>
                 <a href="#shelf-life" class="nav-item" data-view="shelf-life">
-                    <span class="nav-icon">⏱️</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     <span>Shelf-Life Estimator</span>
                 </a>
 
-                <div class="nav-section-label">Optimization & Simulation</div>
+                <div class="nav-section-label">Simulation &amp; Optimization</div>
                 <a href="#simulator" class="nav-item" data-view="simulator">
-                    <span class="nav-icon">🎛️</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="21" y2="21"/><line x1="4" x2="20" y1="3" y2="3"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="8" x2="8" y1="15" y2="21"/><line x1="16" x2="16" y1="3" y2="9"/><line x1="12" x2="12" y1="9" y2="15"/></svg>
                     <span>What-If Simulator</span>
                 </a>
                 <a href="#comparison" class="nav-item" data-view="comparison">
-                    <span class="nav-icon">⚖️</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
                     <span>Packaging Comparison</span>
                 </a>
                 <a href="#sustainability" class="nav-item" data-view="sustainability">
-                    <span class="nav-icon">🌱</span>
-                    <span>Sustainability Analyzer</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                    <span>Sustainability</span>
                 </a>
                 <a href="#cost" class="nav-item" data-view="cost">
-                    <span class="nav-icon">💲</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     <span>Cost Optimizer</span>
                 </a>
 
-                <div class="nav-section-label">Knowledge Base & History</div>
+                <div class="nav-section-label">Data &amp; Governance</div>
                 <a href="#materials" class="nav-item" data-view="materials">
-                    <span class="nav-icon">📦</span>
-                    <span>Material Database</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    <span>Material Catalog</span>
                 </a>
                 <a href="#commodities" class="nav-item" data-view="commodities">
-                    <span class="nav-icon">🍎</span>
-                    <span>Commodity Database</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 .34.06.66.16.96C6.73 6.94 5 9.27 5 12c0 3.87 3.13 7 7 7s7-3.13 7-7c0-2.73-1.73-5.06-4.16-6.04.1-.3.16-.62.16-.96a3 3 0 0 0-3-3Z"/><path d="M12 2v4"/></svg>
+                    <span>Commodities</span>
                 </a>
                 <a href="#sources" class="nav-item" data-view="sources">
-                    <span class="nav-icon">📚</span>
-                    <span>Research Sources</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                    <span>Scientific Sources</span>
                 </a>
                 <a href="#history" class="nav-item" data-view="history">
-                    <span class="nav-icon">📁</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
                     <span>Analysis History</span>
                 </a>
                 <a href="#admin" class="nav-item" data-view="admin">
-                    <span class="nav-icon">⚙️</span>
-                    <span>Settings & Admin</span>
+                    <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Settings</span>
                 </a>
             </nav>
 
             <div class="sidebar-footer">
                 <div class="sih-badge">
-                    🏆 Smart India Hackathon 2026
+                    <span>SIH 2026 • PS: 26236</span>
+                    <span class="sih-status-dot" title="System Operational"></span>
                 </div>
             </div>
         </aside>
@@ -123,15 +116,19 @@
                 <div class="header-left">
                     <button id="btn-mobile-menu" class="hamburger-btn" aria-label="Open Navigation">☰</button>
                     <div class="header-scenarios-strip">
-                        <span class="scenario-label">Quick Presets:</span>
-                        <button id="preset-btn-mango" class="preset-chip-btn">🥭 Fresh Mango</button>
-                        <button id="preset-btn-chips" class="preset-chip-btn">🥔 Potato Chips</button>
+                        <span class="scenario-label">Presets:</span>
+                        <button id="preset-btn-mango" class="preset-chip-btn">🥭 Mango</button>
+                        <button id="preset-btn-chips" class="preset-chip-btn">🥔 Chips</button>
                         <button id="preset-btn-milk" class="preset-chip-btn">🥛 Milk Powder</button>
-                        <button id="preset-btn-sih-demo" class="preset-chip-btn sih-demo-btn">🚀 SIH Demo Mode</button>
+                        <button id="preset-btn-sih-demo" class="preset-chip-btn sih-demo-btn">⚡ SIH Demo Tour</button>
                     </div>
                 </div>
 
                 <div class="header-right">
+                    <div class="header-status-pill">
+                        <span class="header-status-dot"></span>
+                        <span>Engine Ready</span>
+                    </div>
                     <div id="header-user-chip" class="user-chip" style="display: none;">
                         <span class="user-avatar-dot"></span>
                         <span id="user-display-name">SIH Evaluator</span>
@@ -149,11 +146,12 @@
             <section id="view-dashboard" class="spa-view active">
                 <div class="dashboard-cta-banner">
                     <div class="cta-banner-text">
-                        <h3>AI Food Packaging Decision Support</h3>
-                        <p>Evaluate thermodynamic respiration, ASTM D3985 OTR, ASTM F1249 WVTR, and multi-objective Pareto trade-offs for commercial food packaging.</p>
+                        <span class="cta-banner-tag">SIH 2026 • PS ID: 26236</span>
+                        <h3>AI Food Packaging Decision Intelligence</h3>
+                        <p>Computational optimization of ASTM D3985 OTR, ASTM F1249 WVTR, respiration kinetics, and multi-objective Pareto trade-offs for commercial food supply chains.</p>
                     </div>
                     <div class="cta-banner-actions">
-                        <button id="cta-new-analysis" class="btn btn-lg btn-cta-hero">
+                        <button id="cta-new-analysis" class="btn btn-primary btn-cta-hero">
                             + New Packaging Analysis
                         </button>
                     </div>
@@ -162,28 +160,40 @@
                 <!-- 4 Top KPI Cards -->
                 <div class="kpi-metrics-grid">
                     <div class="kpi-card">
-                        <div class="kpi-icon-box kpi-icon-emerald">🍎</div>
+                        <div class="kpi-card-header">
+                            <span class="kpi-icon-box kpi-icon-emerald">🍏</span>
+                            <span class="badge badge-success">Calibrated</span>
+                        </div>
                         <div class="kpi-details">
                             <h3 id="stat-commodities">14</h3>
                             <p>Commodities Profiled</p>
                         </div>
                     </div>
                     <div class="kpi-card">
-                        <div class="kpi-icon-box kpi-icon-teal">📦</div>
+                        <div class="kpi-card-header">
+                            <span class="kpi-icon-box kpi-icon-teal">📦</span>
+                            <span class="badge badge-info">ASTM Tested</span>
+                        </div>
                         <div class="kpi-details">
                             <h3 id="stat-materials">10</h3>
                             <p>Barrier Materials</p>
                         </div>
                     </div>
                     <div class="kpi-card">
-                        <div class="kpi-icon-box kpi-icon-blue">🔬</div>
+                        <div class="kpi-card-header">
+                            <span class="kpi-icon-box kpi-icon-blue">🔬</span>
+                            <span class="badge badge-info">Validated</span>
+                        </div>
                         <div class="kpi-details">
                             <h3 id="stat-analyses">48</h3>
                             <p>Analyses Completed</p>
                         </div>
                     </div>
                     <div class="kpi-card">
-                        <div class="kpi-icon-box kpi-icon-amber">⚡</div>
+                        <div class="kpi-card-header">
+                            <span class="kpi-icon-box kpi-icon-amber">⚡</span>
+                            <span class="badge badge-warning">Pareto Ranked</span>
+                        </div>
                         <div class="kpi-details">
                             <h3 id="stat-recommendations">48</h3>
                             <p>Recommendations</p>
@@ -192,9 +202,9 @@
                 </div>
 
                 <!-- Presets Quick Launch Strip -->
-                <div class="card" style="margin-bottom: 24px;">
+                <div class="card" style="margin-bottom: 20px;">
                     <div class="card-header">
-                        <h4 class="card-title">💡 SIH Evaluator Ready-Made Scenarios</h4>
+                        <h4 class="card-title">Pre-Calibrated Evaluator Scenarios</h4>
                         <span class="badge badge-info">One-Click Demonstration</span>
                     </div>
                     <div class="presets-strip-grid">
@@ -204,10 +214,10 @@
                                     <span class="preset-icon">🥭</span>
                                     <h4>Scenario 1 — Fresh Mango</h4>
                                 </div>
-                                <p>Living climacteric fruit (respiration 45 mg CO₂/kg·h). Tests respiration kinetics where hermetic foils cause fatal anaerobic fermentation. Recommends micro-perforated breathable MAP film.</p>
+                                <p>Living climacteric fruit (respiration 45 mg CO₂/kg·h). Tests respiration kinetics where hermetic foils cause fatal fermentation. Recommends micro-perforated breathable MAP film.</p>
                             </div>
                             <div class="preset-card-footer">
-                                <span>Target: 20 Days Shelf Life</span>
+                                <span class="preset-tag">Target: 20 Days Shelf Life</span>
                                 <span>Load Scenario →</span>
                             </div>
                         </div>
@@ -221,7 +231,7 @@
                                 <p>High fat content (34.5%) and critical water activity (0.22). Evaluates lipid photo-oxidation and hygroscopic loss of crispness. Recommends Metallized BOPP/LDPE Laminate with N₂ flush.</p>
                             </div>
                             <div class="preset-card-footer">
-                                <span>Target: 180 Days Shelf Life</span>
+                                <span class="preset-tag">Target: 180 Days Shelf Life</span>
                                 <span>Load Scenario →</span>
                             </div>
                         </div>
@@ -235,7 +245,7 @@
                                 <p>Spray-dried dairy product with extreme hygroscopicity (lactose caking risk) and fat oxidation. Demonstrates absolute barrier requirements with Aluminium Foil Tri-Laminate.</p>
                             </div>
                             <div class="preset-card-footer">
-                                <span>Target: 365 Days Shelf Life</span>
+                                <span class="preset-tag">Target: 365 Days Shelf Life</span>
                                 <span>Load Scenario →</span>
                             </div>
                         </div>
@@ -677,7 +687,11 @@
                 <div class="recommendation-hero-card">
                     <div class="rec-hero-header">
                         <div class="rec-hero-title">
-                            <span class="badge badge-success" style="background: rgba(255,255,255,0.2); color: #ffffff; border: none; margin-bottom: 8px;">Top Optimized Match</span>
+                            <div class="rec-meta-tags-row">
+                                <span class="badge badge-success">Top Optimized Match</span>
+                                <span class="badge badge-info" id="rec-commodity-name">Commodity</span>
+                                <span class="badge badge-warning" id="rec-map-status">MAP Compatible</span>
+                            </div>
                             <h2 id="rec-material-name">Recommended Packaging Material</h2>
                             <p id="rec-material-cat">Laminate Barrier Film</p>
                         </div>
@@ -704,6 +718,9 @@
                             <span>Estimated Shelf-Life</span>
                             <strong id="rec-shelf-life-range">18–22 days</strong>
                         </div>
+                    </div>
+                    <div style="margin-top: 14px; font-size: 0.78rem; color: #94a3b8; display: flex; justify-content: flex-end; gap: 16px;">
+                        <span>Unit Economics: <b id="rec-unit-cost" style="color: #34d399;">$0.050 USD</b></span>
                     </div>
                 </div>
 
@@ -1590,6 +1607,9 @@
             <p class="text-muted" style="font-size: 0.76rem;">Applying ASTM barrier physics &amp; multi-objective optimization</p>
         </div>
     </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
 
     <!-- Main Application Script (ES Module) -->
     <script type="module" src="/js/app.js"></script>
