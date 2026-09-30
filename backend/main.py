@@ -75,8 +75,12 @@ if js_dir.exists():
 if assets_dir.exists():
     app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
 
-# Root Endpoint: Serves SPA index.html
+if FRONTEND_DIR.exists():
+    app.mount("/frontend", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
+
+# Root & Index Endpoints: Serves SPA index.html
 @app.get("/")
+@app.get("/index.html")
 async def serve_index():
     index_file = FRONTEND_DIR / "index.html"
     if index_file.exists():
