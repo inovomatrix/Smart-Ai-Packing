@@ -23,19 +23,20 @@ function renderCircularityMatrix(materials) {
         const biodeg = (m.biodegradability || "").toLowerCase();
         const recyc = (m.recyclability || "").toLowerCase();
 
+        const cat = (m.category || "").toLowerCase();
         let ecoScore = 55;
         let streamBadge = "badge-secondary";
 
-        if ("compostable" in biodeg || "biodegradable" in biodeg || "paper" in m.category.lower()) {
+        if (biodeg.includes("compostable") || biodeg.includes("biodegradable") || cat.includes("paper")) {
             ecoScore = 95;
             streamBadge = "badge-success";
-        } else if ("code 2" in recyc || "code 4" in recyc || "code 5" in recyc || "pe stream" in recyc) {
+        } else if (recyc.includes("code 2") || recyc.includes("code 4") || recyc.includes("code 5") || recyc.includes("pe stream")) {
             ecoScore = 85;
             streamBadge = "badge-info";
-        } else if ("high" in recyc) {
+        } else if (recyc.includes("high")) {
             ecoScore = 78;
             streamBadge = "badge-info";
-        } else if ("moderate" in recyc) {
+        } else if (recyc.includes("moderate")) {
             ecoScore = 60;
             streamBadge = "badge-warning";
         } else {

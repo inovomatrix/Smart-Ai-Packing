@@ -7,10 +7,10 @@
     <meta name="description" content="AI-Based Intelligent Food Packaging Material Recommendation System for Food Commodities — Smart India Hackathon 2026 (Problem Statement: SIH26236)">
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/analysis.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/analysis.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
     <!-- Chart.js for Scientific Visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
@@ -1304,6 +1304,40 @@
                 </div>
 
                 <div class="rec-details-grid">
+                    <div class="card" style="grid-column: 1 / -1;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                            <h4 class="card-title" style="margin: 0;">Cloudflare &amp; Backend API Connectivity</h4>
+                            <span id="settings-api-status-badge" class="badge badge-success">● Embedded Engine &amp; Fallback Active</span>
+                        </div>
+                        <p class="text-secondary" style="margin-bottom: 14px; font-size: 0.88rem;">
+                            When deployed on static hosts like <b>Cloudflare Pages</b>, PackSmart AI automatically operates in resilient standalone mode with all 14 food commodities and ASTM barrier models loaded. You can optionally connect an external FastAPI backend.
+                        </p>
+                        <div style="background: #f8fafc; border: 1px solid var(--border); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 14px;">
+                            <label class="form-label" style="font-weight: 600;">Custom Backend API URL</label>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                <input type="url" id="settings-api-url-input" class="form-control" style="flex: 1; min-width: 250px;" placeholder="e.g. https://packsmart-api.onrender.com (or leave empty for standalone)">
+                                <button type="button" id="btn-settings-test-api" class="btn btn-outline btn-sm">Test Connection</button>
+                                <button type="button" id="btn-settings-save-api" class="btn btn-primary btn-sm">Save URL</button>
+                                <button type="button" id="btn-settings-reset-api" class="btn btn-outline btn-sm">Reset to Standalone</button>
+                            </div>
+                            <p id="settings-api-test-result" style="margin: 8px 0 0; font-size: 0.82rem; color: var(--text-muted);"></p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; font-size: 0.82rem;">
+                            <div style="background: #ffffff; border: 1px solid var(--border); padding: 10px; border-radius: 6px;">
+                                <div style="color: var(--text-muted);">Loaded Commodities</div>
+                                <b id="settings-count-commodities" style="font-size: 1.1rem; color: var(--primary);">14 Food Commodities</b>
+                            </div>
+                            <div style="background: #ffffff; border: 1px solid var(--border); padding: 10px; border-radius: 6px;">
+                                <div style="color: var(--text-muted);">Packaging Materials</div>
+                                <b id="settings-count-materials" style="font-size: 1.1rem; color: var(--primary);">10 ASTM Materials</b>
+                            </div>
+                            <div style="background: #ffffff; border: 1px solid var(--border); padding: 10px; border-radius: 6px;">
+                                <div style="color: var(--text-muted);">Deployment Target</div>
+                                <b style="font-size: 1.1rem; color: #0284c7;">Cloudflare Pages Ready</b>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <h4 class="card-title" style="margin-bottom: 12px;">Supabase Cloud Connection</h4>
                         <p class="text-secondary" style="margin-bottom: 14px; font-size: 0.88rem;">
@@ -1612,6 +1646,6 @@
     <div id="toast-container" class="toast-container"></div>
 
     <!-- Main Application Script (ES Module) -->
-    <script type="module" src="/js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

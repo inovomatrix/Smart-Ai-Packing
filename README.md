@@ -114,5 +114,22 @@ To enable judges to evaluate the full system in under 2–3 minutes:
 
 ---
 
+## ☁️ Deploying on Cloudflare Pages
+
+PackSmart AI is fully optimized for static deployment on **Cloudflare Pages**:
+
+1. **Build & Output Settings:**
+   * **Framework preset:** `None`
+   * **Build command:** *(leave empty)*
+   * **Build output directory:** `frontend` (or `/` if deploying full repository)
+2. **Standalone Embedded Scientific Dataset:**
+   * When deployed on Cloudflare Pages without a backend server, PackSmart AI automatically runs its embedded scientific database (14 food commodities, 10 ASTM materials, 4 research sources) and client-side AI recommendation engine.
+3. **Connecting a Live Backend (Optional):**
+   * If you deploy the Python FastAPI backend on Render, Railway, Fly.io, or AWS, simply open **Settings** inside the app and enter your backend URL (e.g., `https://packsmart-api.onrender.com`).
+   * Alternatively, use the included `frontend/_redirects` file to proxy `/api/*` requests directly to your backend domain.
+
+---
+
 ## ⚠️ Scientific & Regulatory Disclaimer
 > *"PackSmart AI provides computational decision-support recommendations based on peer-reviewed food science literature and barrier physics. Packaging performance, food safety, and shelf-life must be validated through appropriate laboratory testing, packaging trials, and applicable regulatory requirements before commercial deployment."*
+

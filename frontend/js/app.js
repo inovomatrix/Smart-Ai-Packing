@@ -4,6 +4,7 @@
  */
 
 import { auth } from "./auth.js";
+import { API } from "./api.js";
 import { loadDashboard } from "./dashboard.js";
 import { initAnalysisWizard } from "./analysis.js";
 import { displayRecommendationResults } from "./recommendation.js";
@@ -100,6 +101,7 @@ export function navigateToView(viewId) {
     if (viewId === "history") loadHistoryTable();
     if (viewId === "sustainability") initSustainability();
     if (viewId === "cost") initCostOptimizer();
+    if (viewId === "admin") updateAdminDiagnostics();
 
     // Close mobile drawer if open
     const sidebar = document.getElementById("app-sidebar");
@@ -112,6 +114,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupNavigation();
     setupAuthModal();
     setupMobileDrawer();
+    setupSettingsPanel();
 
     // Initialize all modules
     await initAnalysisWizard();
@@ -124,6 +127,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await initShelfLifeEstimator();
     await initHistory();
     initDemoScenarios();
+    updateAdminDiagnostics();
 });
 
 function setupNavigation() {
@@ -237,4 +241,87 @@ function setupAuthModal() {
             e.target.style.display = "none";
         }
     });
+}
+
+function setupSettingsPanel() {
+    const input = document.getElementById("settings-api-url-input");
+    const testBtn = document.getElementById("btn-settings-test-api");
+    const saveBtn = document.getElementById("btn-settings-save-api");
+    const resetBtn = document.getElementById("btn-settings-reset-api");
+    const resultText = document.getElementById("settings-api-test-result");
+    const badge = document.getElementById("settings-api-status-badge");
+
+    const currentUrl = API.getApiBaseUrl();
+    if (input && currentUrl) {
+        input.value = currentUrl;
+    }
+
+    function updateBadge() {
+        const url = API.getApiBaseUrl();
+        if (badge) {
+            if (url) {
+                const displayHost = url.replace(/^https?:\/\//, "").substring(0, 30);
+                badge.textContent = `● Custom Backend: ${displayHost}`;
+                badge.className = "badge badge-info";
+            } else {
+                badge.textContent = "● Embedded Engine & Fallback Active";
+                badge.className = "badge badge-success";
+            }
+        }
+    }
+    updateBadge();
+
+    if (testBtn) {
+        testBtn.addEventListener("click", async () => {
+            const url = input ? input.value : "";
+            testBtn.disabled = true;
+            testBtn.textContent = "Testing...";
+            if (resultText) resultText.textContent = "Connecting to API endpoint...";
+
+            const res = await API.testConnection(url);
+            testBtn.disabled = false;
+            testBtn.textContent = "Test Connection";
+
+            if (resultText) {
+                resultText.style.color = res.success ? "#059669" : "#dc2626";
+                resultText.textContent = res.success 
+                    ? `✓ Connection Success: ${res.message}` 
+                    : `✕ Connection Notice: ${res.message}. The web app will continue using the embedded scientific dataset.`;
+            }
+        });
+    }
+
+    if (saveBtn) {
+        saveBtn.addEventListener("click", () => {
+            const url = input ? input.value.trim() : "";
+            API.setApiBaseUrl(url);
+            updateBadge();
+            showToast(url ? `Backend API URL saved: ${url}` : "Reset to embedded scientific dataset & relative API.", "success");
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", () => {
+            if (input) input.value = "";
+            API.setApiBaseUrl("");
+            updateBadge();
+            if (resultText) resultText.textContent = "";
+            showToast("Reset to Cloudflare Standalone Mode with embedded scientific dataset.", "info");
+        });
+    }
+}
+
+async function updateAdminDiagnostics() {
+    try {
+        const commodities = await API.fetchCommodities();
+        const materials = await API.fetchMaterials();
+
+        const commEl = document.getElementById("settings-count-commodities");
+        if (commEl) commEl.textContent = `${commodities.length} Food Commodities`;
+
+        const matEl = document.getElementById("settings-count-materials");
+        if (matEl) matEl.textContent = `${materials.length} ASTM Materials`;
+    } catch (e) {
+        console.warn("[Admin] Diagnostic count update error:", e);
+    }
 }

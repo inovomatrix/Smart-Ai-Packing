@@ -1,0 +1,3 @@
+# Cloudflare Pages Redirects from root deployment
+/  /frontend/index.html  301
+/* /frontend/:splat 301

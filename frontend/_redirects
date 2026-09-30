@@ -1,0 +1,9 @@
+# PackSmart AI — Cloudflare Pages Redirects & Reverse Proxy Configuration
+# Smart India Hackathon 2026 | PS ID: SIH26236
+
+# OPTION: If you host the FastAPI Python backend on an external server (e.g. Render, Railway, Fly.io),
+# uncomment the line below and replace with your backend domain to automatically proxy all /api requests:
+# /api/*  https://packsmart-backend.onrender.com/api/:splat  200
+
+# SPA fallback routing for clean URL navigation
+/*  /index.html  200

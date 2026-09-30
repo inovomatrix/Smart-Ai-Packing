@@ -5,16 +5,20 @@
 
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-// Supabase project credentials (replace with your live Supabase project credentials)
-const SUPABASE_URL = "https://your-project-id.supabase.co";
-const SUPABASE_ANON_KEY = "your-anon-key-here";
+// Supabase project credentials (can be set via Settings, localStorage, or hardcoded below)
+const storedUrl = typeof localStorage !== "undefined" ? localStorage.getItem("packsmart_supabase_url") : null;
+const storedKey = typeof localStorage !== "undefined" ? localStorage.getItem("packsmart_supabase_anon_key") : null;
 
-export const IS_LIVE_SUPABASE = (
+const SUPABASE_URL = (storedUrl || (typeof window !== "undefined" && window.PACKSMART_SUPABASE_URL) || "https://your-project-id.supabase.co").trim();
+const SUPABASE_ANON_KEY = (storedKey || (typeof window !== "undefined" && window.PACKSMART_SUPABASE_ANON_KEY) || "your-anon-key-here").trim();
+
+export const IS_LIVE_SUPABASE = Boolean(
     SUPABASE_URL && 
     !SUPABASE_URL.includes("your-project-id") &&
     !SUPABASE_URL.includes("<your-project-id>") &&
     SUPABASE_ANON_KEY &&
-    !SUPABASE_ANON_KEY.includes("your-anon-key")
+    !SUPABASE_ANON_KEY.includes("your-anon-key") &&
+    !SUPABASE_ANON_KEY.includes("<your-anon-key>")
 );
 
 let client = null;
