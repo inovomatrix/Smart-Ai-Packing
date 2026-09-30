@@ -64,9 +64,9 @@ async def health_check():
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR / "frontend"
 
-css_dir = FRONTEND_DIR / "css"
-js_dir = FRONTEND_DIR / "js"
-assets_dir = FRONTEND_DIR / "assets"
+css_dir = FRONTEND_DIR / "css" if (FRONTEND_DIR / "css").exists() else BASE_DIR / "css"
+js_dir = FRONTEND_DIR / "js" if (FRONTEND_DIR / "js").exists() else BASE_DIR / "js"
+assets_dir = FRONTEND_DIR / "assets" if (FRONTEND_DIR / "assets").exists() else BASE_DIR / "assets"
 
 if css_dir.exists():
     app.mount("/css", StaticFiles(directory=str(css_dir)), name="css")
@@ -83,9 +83,11 @@ if FRONTEND_DIR.exists():
 @app.get("/index.html")
 async def serve_index():
     index_file = FRONTEND_DIR / "index.html"
+    if not index_file.exists():
+        index_file = BASE_DIR / "index.html"
     if index_file.exists():
         return FileResponse(str(index_file))
-    return {"message": "PackSmart AI Backend is running. Please open frontend/index.html."}
+    return {"message": "PackSmart AI Backend is running."}
 
 if __name__ == "__main__":
     import uvicorn

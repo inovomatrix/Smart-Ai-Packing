@@ -1,0 +1,16 @@
+{
+  "name": "packsmart-ai",
+  "version": "1.0.0",
+  "description": "PackSmart AI — Food Packaging Decision-Support System (SIH 2026)",
+  "scripts": {
+    "build": "echo 'PackSmart AI build ready'"
+  },
+  "keywords": [
+    "sih2026",
+    "food-packaging",
+    "ai",
+    "fastapi"
+  ],
+  "author": "PackSmart AI Team",
+  "license": "MIT"
+}

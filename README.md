@@ -116,17 +116,23 @@ To enable judges to evaluate the full system in under 2–3 minutes:
 
 ## ☁️ Deploying on Cloudflare Pages
 
-PackSmart AI is fully optimized for static deployment on **Cloudflare Pages**:
+PackSmart AI is fully optimized for zero-friction deployment on **Cloudflare Pages**:
 
-1. **Build & Output Settings:**
+1. **Quick Deploy Steps:**
+   * Go to **Cloudflare Dashboard** → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
+   * Select your `Smart-Ai-Packing` repository.
    * **Framework preset:** `None`
-   * **Build command:** *(leave empty)*
-   * **Build output directory:** `frontend` (or `/` if deploying full repository)
+   * **Build command:** *(leave empty or `npm run build`)*
+   * **Build output directory:** `.` (root) or `frontend` (both work seamlessly out-of-the-box!)
+   * Click **Save and Deploy**.
+
 2. **Standalone Embedded Scientific Dataset:**
-   * When deployed on Cloudflare Pages without a backend server, PackSmart AI automatically runs its embedded scientific database (14 food commodities, 10 ASTM materials, 4 research sources) and client-side AI recommendation engine.
-3. **Connecting a Live Backend (Optional):**
-   * If you deploy the Python FastAPI backend on Render, Railway, Fly.io, or AWS, simply open **Settings** inside the app and enter your backend URL (e.g., `https://packsmart-api.onrender.com`).
-   * Alternatively, use the included `frontend/_redirects` file to proxy `/api/*` requests directly to your backend domain.
+   * When deployed on Cloudflare Pages without a backend server, PackSmart AI automatically runs with its embedded scientific database (14 food commodities, 10 ASTM materials, 4 research sources) and full client-side AI recommendation engine. All barrier calculations, Pareto optimizations, and What-If simulations run directly in the browser with zero external dependencies.
+
+3. **Connecting a Live FastAPI Backend (Optional):**
+   * If you host the Python FastAPI backend on Render, Railway, Fly.io, or AWS:
+     - Open **Settings** inside the running app and enter your backend URL (e.g., `https://packsmart-api.onrender.com`).
+     - Or update `_redirects` to proxy `/api/*` requests directly to your backend domain.
 
 ---
 
